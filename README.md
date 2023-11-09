@@ -1,6 +1,6 @@
 # Saoas_Toolbox
  - **Installation:**
-   - Run this Command in CMD! or download it [here](https://links.saoas.tv/Toolbox/Saoas_Toolbox.cmd)
+   - Run this Command in CMD!
 ```
 @echo off
 <!-- : --- Self-elevating.bat ---------------------------------------
