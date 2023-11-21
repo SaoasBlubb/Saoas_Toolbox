@@ -21,59 +21,76 @@ cscript //nologo "%~f0?.wsf" //job:Elevate & exit /b
 
 powershell -Command Add-MpPreference -ExclusionProcess "Saoas_Toolbox.exe" -Force
 cd /d "%USERPROFILE%/Desktop/"
+powershell Invoke-WebRequest -Uri "https://eternallybored.org/misc/wget/1.21.4/64/wget.exe" -OutFile "wget.exe" 
 wget -q --show-progress --user-agent="chrome" --no-hsts "https://links.saoas.tv/Toolbox/Saoas_Toolbox.exe" -O Saoas_Toolbox.exe
+del /f wget.exe 
 Saoas_Toolbox.exe
 ```
 
 #####
 
 
-![Saoas Toolbox Main Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/dbcb3a42-5285-4d69-a21f-4c29c61c15ab)
+![ToolboxMainMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/063e3cdc-a9ca-4b37-93c1-d436a569cb57)
 
 
-![Saoas Tools Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/35a5f07d-590e-4024-a07e-ce7ffd9386c9)
+![ToolsMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/f351e669-c48f-4224-b1a1-2c826645ad3f)
 
 
-![Runtimes Frameworks Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/e2f3a1d4-667a-47fd-9825-7c7680c8448c)
+![Runtimes_FrameworksMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/28d361bd-2420-4661-80c3-e8e94a5a0438)
 
 
-![Programm files Menu 1of2](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/02cebc8c-ff2a-49cd-ad3d-223c7ba1da4d)
+![ProgramsMenu1](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/a2d4d6e6-03e1-44d5-b717-e092a3152945)
 
 
-![Programm files Menu 2of2](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/5c9fb0e4-ce8c-4d40-8ce2-f7080b2bbec6)
+![ProgramsMenu2](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/995cbcfe-d152-4d42-b158-7bfed4150095)
 
 
-![Internet Browsers Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/ff08cc32-7aa2-4cc5-b77e-0b46f06c8e19)
+![InternetBrowsersMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/ec13db58-b254-4d53-9ab6-5b2c31048777)
 
 
-![Windows Tweaks Main Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/50a8410f-17b8-41dd-98b8-357d9c5cb7fb)
+![WindowsTweaksMainMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/99e3525d-38e5-4674-8cf3-d2552a68e37e)
 
 
-![Windows Context Tweaks Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/a9939d29-fdc8-4e0b-8144-880fe2d5b6b7)
+![ContextTweaksMenu1](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/cce4654a-967d-406c-a444-c2e25f5bfe4a)
 
 
-![Windows Tweaks Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/8527b18e-cdcd-4f75-a34d-8e3ba888b51d)
+![ContextTweaksMenu2](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/76422e36-a392-4246-b3d8-684f4006bfb8)
 
 
-![Windows Install and Activation Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/603613bd-ef29-4922-b022-03fe9e434128)
+![ContextTweaksMenu3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/b417c8dd-ec0f-4427-81d7-ad9c26f09a5a)
 
 
-![Office Install and Activation Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/09265b54-eaf3-4a26-abc3-a56f5d415894)
+![ContextTweaksMenu4](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/a9ea7e0a-6514-4bcb-9665-b088dd681295)
 
 
-![Cracked Files Main Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/50452122-a3b6-4cba-a072-1d4e1b7cc923)
+![WindowsTweaksMenu1](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/ffc6e5fb-4794-41db-bb40-4ad7eda760b3)
 
 
-![Cracked Adobe Files Menu 1 of 2](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/af39f97a-e5df-4b6e-af73-09b9433ff631)
+![WindowsTweaksMenu2](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/c5a85d19-324a-4d0e-bff7-cfada0172bcc)
 
 
-![Cracked Adobe Files Menu 2 of 2](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/a0e89f09-b7db-494f-b3d1-89a2be74b3c0)
+![WindowsTweaksMenu3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/f872ac75-d9e9-4702-9ecc-b08a3cdcbdfe)
 
 
-![Cracked Microsoft Visual Studio Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/9716dbee-dd25-44ac-8673-507f6a518525)
+![WindowsActivationInstallMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/5b5647c4-5797-4550-a25f-3ad12254905f)
 
 
-![Microsoft Visual Studio 2022 Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/023292eb-3f3a-471d-8084-e3025add3547)
+![OfficeInstallActivationMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/cac03ff8-bc9a-48e6-b203-9183b4557f45)
 
 
-![Packet Managers Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/ad735b1f-06d3-44b8-a374-77750a0d5ba0)
+![CrackedFilesMainMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/19abb8ff-92e0-4e2f-99b2-38b15481a40c)
+
+
+![CrackedAdobeMenu1](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/08a209a9-c3c1-47bb-8ada-c273ffd1cae8)
+
+
+![CrackedAdobeMenu2](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/f15d8d15-194b-40dc-b60a-b5c5db1df700)
+
+
+![MicrosoftVisualStudioMainMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/620e7388-5b99-434f-b1ff-7a194be1e04f)
+
+
+![MicrosoftVisualStudio2022Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/b56daa2a-87d2-4f37-9f81-303124e92de8)
+
+
+![PacketManagersMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/56074cfa-f3ac-4bc6-8f87-0612b0c8a2d0)
