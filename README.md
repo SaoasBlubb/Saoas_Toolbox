@@ -1,6 +1,6 @@
 # Saoas_Toolbox
  - **Installation:**
-   - Run this Command in CMD!
+   - Copy the following Code into an Text Document and save as .cmd File, then start the file.
 ```
 @echo off
 <!-- : --- Self-elevating.bat ---------------------------------------
