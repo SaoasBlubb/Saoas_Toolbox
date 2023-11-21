@@ -43,9 +43,6 @@ Saoas_Toolbox.exe
 ![ProgramsMenu1](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/a2d4d6e6-03e1-44d5-b717-e092a3152945)
 
 
-![ProgramsMenu2](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/995cbcfe-d152-4d42-b158-7bfed4150095)
-
-
 ![InternetBrowsersMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/ec13db58-b254-4d53-9ab6-5b2c31048777)
 
 
