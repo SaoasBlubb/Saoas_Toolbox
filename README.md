@@ -73,25 +73,7 @@ Saoas_Toolbox.exe
 ![WindowsTweaksMenu3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/f872ac75-d9e9-4702-9ecc-b08a3cdcbdfe)
 
 
-![WindowsActivationInstallMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/5b5647c4-5797-4550-a25f-3ad12254905f)
-
-
-![OfficeInstallActivationMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/cac03ff8-bc9a-48e6-b203-9183b4557f45)
-
-
-![CrackedFilesMainMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/19abb8ff-92e0-4e2f-99b2-38b15481a40c)
-
-
-![CrackedAdobeMenu1](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/08a209a9-c3c1-47bb-8ada-c273ffd1cae8)
-
-
-![CrackedAdobeMenu2](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/f15d8d15-194b-40dc-b60a-b5c5db1df700)
-
-
 ![MicrosoftVisualStudioMainMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/620e7388-5b99-434f-b1ff-7a194be1e04f)
-
-
-![MicrosoftVisualStudio2022Menu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/b56daa2a-87d2-4f37-9f81-303124e92de8)
 
 
 ![PacketManagersMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/56074cfa-f3ac-4bc6-8f87-0612b0c8a2d0)
