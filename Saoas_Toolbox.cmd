@@ -21,3 +21,5 @@ powershell Invoke-WebRequest -Uri "https://eternallybored.org/misc/wget/1.21.4/6
 
 cd /d "%USERPROFILE%\Desktop"
 powershell Invoke-WebRequest -Uri "https://files.saoas.tv/Toolbox/Saoas_Toolbox.exe" -OutFile "Saoas_Toolbox.exe"
+
+start "" "%USERPROFILE%\Desktop\Saoas_Toolbox.exe" 
