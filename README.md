@@ -1,7 +1,7 @@
 # Saoas_Toolbox
  - **Installation:**
  - Just run the following code in Powershell!
- - To get access contact and send me the hwid_request file created with the Toolbox! 
+ - To get access contact and send me the license_request file created with the Toolbox! 
 ```
 irm https://toolbox.saoas.ovh/get | iex
 ```
