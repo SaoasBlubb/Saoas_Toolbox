@@ -17,11 +17,7 @@ irm https://toolbox.saoas.ovh/remove | iex ; irm https://toolbox.saoas.ovh/get |
 ```
 - **Full Auto Installer, Deinstaller, Reinstaller!**
 - A simple launcher for those who have no plan how to execute this in Powershell.
-```
-
-```
-
-
+- **[Download](https://github.com/SaoasBlubb/Saoas_Toolbox/releases/download/latest/Full_Auto_Saoas_Toolbox.exe)**
 #####
 
 # TOOLBOX PICTURES:
