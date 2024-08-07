@@ -10,6 +10,11 @@ irm https://toolbox.saoas.ovh/get | iex
 ```
 irm https://toolbox.saoas.ovh/remove | iex
 ```
+ - **Auto Reinstall:**
+ - Just run the following code in Powershell!
+```
+irm https://toolbox.saoas.ovh/remove | iex ; irm https://toolbox.saoas.ovh/get | iex
+```
 
 #####
 
