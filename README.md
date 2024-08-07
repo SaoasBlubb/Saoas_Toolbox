@@ -5,6 +5,11 @@
 ```
 irm https://toolbox.saoas.ovh/get | iex
 ```
+ - **Uninstall:**
+ - Just run the following code in Powershell!
+```
+irm https://toolbox.saoas.ovh/remove | iex
+```
 
 #####
 
