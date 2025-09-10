@@ -1,3 +1,5 @@
+# Discord: https://discord.gg/uZUHakXmew
+
 # Saoas_Toolbox
  - **Installation:**
  - Just run the following code in Powershell!
